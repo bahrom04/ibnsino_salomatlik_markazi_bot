@@ -1,0 +1,5 @@
+User[1107759940,Bahrom]: Started bot at [2023-10-20 21:36:09] 
+User[1107759940,Bahrom]: Started bot at [2023-10-20 21:37:42] 
+User[1107759940,Bahrom]: Started bot at [2023-10-20 21:40:41] 
+User[1107759940,Bahrom]: Started bot at [2023-10-20 21:44:48] 
+User[1107759940,Bahrom]: Started bot at [2023-10-20 21:44:50] 
