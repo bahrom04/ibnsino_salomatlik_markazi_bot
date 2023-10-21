@@ -14,11 +14,9 @@ biz_haqimizda = '''
 
 📅 Ibn Sino salomatlik markaziga 2015 yilda Dr. Ruslan Rustamovich tomonidan asos solingan
 
-💊 Ibn Sino salomatlik markazi Gijja kasalliklarini aniqlash va ularni davolashga ixtisoslashgan bo'lib
-eng so'ngi zamonaviy tashxis va davo uslublarini xalq tabobati bilan uyg'unlashtirgan holda ish olib bormoqda
+💊 Ibn Sino salomatlik markazi Gijja kasalliklarini eng so'ngi zamonaviy uslubda aniqlash va ularni tabiiy usullarda davolashga ixtisoslashgan Respublikamizdagi 1-raqamli klinika bo'lib hisoblanadi.
 
-👤 Ibn Sino salomatlik markazi xozirgi kungacha 18 mingdan ortiq bemorni samarali davolagan
-    
+👤 Ibn Sino salomatlik markazi ximatlaridan shu kunga qadar mamnun bo'lgan be'morlar soni 25 000 ortiqni tashkil etadi. 
 '''
 
 nega_aynan_biz = '''
