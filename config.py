@@ -66,10 +66,11 @@ davolash imkoniyati beradi
 1 kunda 1-1,5 soat vaqtni
 '''
 
-# ijtimoiy_tarmoqlar = '''
-# ⚡️ Instagram: https://instagram.com/ibnsino_salomatlik_markazi?igshid=MzRlODBiNWFlZA==
+ijtimoiy_tarmoqlar = '''
+📍 Buxoro
+☎️ +998957770303
+☎️ +998956000356
 
-# 📢 Telegram: @ibnsino2015 
-# 📢 Telegram guruhimiz: t.me/ibnsinobuxoro 
-# 🧑‍💻 Telegram bot: @ibnsino_salomatlik_markazi_bot
-# '''
+📍 Navoiy
+☎️ +998950770303
+'''

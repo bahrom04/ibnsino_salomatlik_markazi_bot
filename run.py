@@ -6,6 +6,7 @@ from config import (biz_haqimizda,
                     nega_aynan_biz, 
                     boglanish_buxoro, 
                     boglanish_navoiy , 
+                    ijtimoiy_tarmoqlar,
                     muolaja_haqida)
 from Data_base import user
 from datetime import datetime
@@ -51,7 +52,7 @@ kb_manzil.add(*lokatsiyalist)
 
 # Inline keyboard
 inline_kb = types.InlineKeyboardMarkup(row_width=1)
-inline_kb_1 = types.InlineKeyboardButton('Telegram', url='https://t.me/ibnsino2015')
+inline_kb_1 = types.InlineKeyboardButton('Xabar yuborish', url='https://t.me/ibnsino2015')
 inline_kb_2 = types.InlineKeyboardButton('Telegram guruhimiz', url='https://t.me/ibnsinobuxoro')
 inline_kb_3 = types.InlineKeyboardButton('Instagram', url='https://instagram.com/ibnsino_salomatlik_markazi?igshid=MzRlODBiNWFlZA==')
 inline_kb.add(inline_kb_1, inline_kb_2, inline_kb_3)
@@ -119,7 +120,7 @@ async def about_us(message: types.Message):
 async def contact(message: types.Message):
     await bot.send_message(
         chat_id=message.from_user.id,
-        text="📞 Biz bilan bog'lanish",
+        text=ijtimoiy_tarmoqlar,
         reply_markup=inline_kb
     )
 
