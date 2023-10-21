@@ -6,7 +6,6 @@ from config import (biz_haqimizda,
                     nega_aynan_biz, 
                     boglanish_buxoro, 
                     boglanish_navoiy , 
-                    ijtimoiy_tarmoqlar,
                     muolaja_haqida)
 from Data_base import user
 from datetime import datetime
@@ -50,6 +49,15 @@ lokatsiyalist = [types.reply_keyboard.KeyboardButton('📍 Buxoro'),
 
 kb_manzil.add(*lokatsiyalist)
 
+# Inline keyboard
+inline_kb = types.InlineKeyboardMarkup(row_width=1)
+inline_kb_1 = types.InlineKeyboardButton('Telegram', url='https://t.me/ibnsino2015')
+inline_kb_2 = types.InlineKeyboardButton('Telegram guruhimiz', url='https://t.me/ibnsinobuxoro')
+inline_kb_3 = types.InlineKeyboardButton('Instagram', url='https://instagram.com/ibnsino_salomatlik_markazi?igshid=MzRlODBiNWFlZA==')
+inline_kb.add(inline_kb_1, inline_kb_2, inline_kb_3)
+
+
+
 
 
 ID = '1107759940'
@@ -85,6 +93,10 @@ async def send_welcome(message: types.Message):
         f.close()
 
 
+
+    
+
+
 @dp.message_handler(filters.Text(contains='🏥 Biz haqimizda'))
 async def about_us(message: types.Message):
     path = f'/home/bahrom/Desktop/TelegramBots/ibnsino/ibnsino_bot/ibnsino.jpg'
@@ -97,10 +109,19 @@ async def about_us(message: types.Message):
         caption=biz_haqimizda)
 
 
+@dp.message_handler(commands=['help'])
+async def about_us(message: types.Message):
+    
+    await message.answer(message.chat.id)
+
 
 @dp.message_handler(filters.Text(contains="📞 Biz bilan bog'lanish"))
 async def contact(message: types.Message):
-    await message.reply(reply_markup=kb, text=ijtimoiy_tarmoqlar)
+    await bot.send_message(
+        chat_id=message.from_user.id,
+        text="📞 Biz bilan bog'lanish",
+        reply_markup=inline_kb
+    )
 
 
 
@@ -158,7 +179,7 @@ async def contact(message: types.Message):
 async def create_template(message: types.Message, state: FSMContext):
     async with state.proxy() as data:
         data['city'] = message.text
-    await message.answer("To'liq ismingizni kiriting")
+    await message.answer("To'liq ismingizni kiriting", reply_markup=types.ReplyKeyboardRemove())
     await NewTemplate.next()
 
 
@@ -178,10 +199,11 @@ async def create_template(message: types.Message, state: FSMContext):
         data['phone_number'] = message.text
     # data base
 
-    await message.answer("Siz shifokor ko'rigiga yozildingiz", reply_markup=kb)
+    await message.answer("Siz shifokor ko'rigiga ro'yxatga olindingiz! \nTez orada siz bilan bog'lanamiz", reply_markup=kb)
 
     developer = '1107759940'
-    admin = '1157098462'
+    admin_buxoro = '-1002073642555'
+    admin_navoiy = '-1001856047828'
     api_token = API_Key  # Replace with your Telegram bot API token
 
     city = data['city']
@@ -194,6 +216,11 @@ async def create_template(message: types.Message, state: FSMContext):
 
     
     api_url = f"https://api.telegram.org/bot{api_token}/sendMessage"
+
+    if city == '📍 Buxoro':
+        admin = admin_buxoro
+    else:
+        admin = admin_navoiy
 
     # Send message to developer
     payload = {

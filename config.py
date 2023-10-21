@@ -37,8 +37,8 @@ nega_aynan_biz = '''
 
 
 boglanish_buxoro = '''
-☎️ Aloqa markazi: 957770303
-☎️ Aloqa markazi: 956000356   
+☎️ Aloqa markazi: +998957770303
+☎️ Aloqa markazi: +998956000356   
 
 📍 Bizning manzil:  BUXORO SHAHAR 5 - KICHIK NOHIYA MIRXAN RESTORANI YON TOMONIDA
 
@@ -46,7 +46,7 @@ boglanish_buxoro = '''
 
 
 boglanish_navoiy = '''
-☎️ Aloqa markazi: 950770303  
+☎️ Aloqa markazi: +998950770303  
 
 📍 Bizning manzil: NAVOIY VILOYAT KARMANA TUMAN OLMOS RESTORANI RO'PARASIDA
 
@@ -66,10 +66,10 @@ davolash imkoniyati beradi
 1 kunda 1-1,5 soat vaqtni
 '''
 
-ijtimoiy_tarmoqlar = '''
-⚡️ Instagram: https://instagram.com/ibnsino_salomatlik_markazi?igshid=MzRlODBiNWFlZA==
+# ijtimoiy_tarmoqlar = '''
+# ⚡️ Instagram: https://instagram.com/ibnsino_salomatlik_markazi?igshid=MzRlODBiNWFlZA==
 
-📢 Telegram: @ibnsino2015 
-📢 Telegram guruhimiz: t.me/ibnsinobuxoro 
-🧑‍💻 Telegram bot: @ibnsino_salomatlik_markazi_bot
-'''
+# 📢 Telegram: @ibnsino2015 
+# 📢 Telegram guruhimiz: t.me/ibnsinobuxoro 
+# 🧑‍💻 Telegram bot: @ibnsino_salomatlik_markazi_bot
+# '''
