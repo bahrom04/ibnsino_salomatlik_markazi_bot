@@ -105,7 +105,7 @@ async def send_welcome(message: types.Message):
 
 @dp.message_handler(filters.Text(contains='🏥 Biz haqimizda'))
 async def about_us(message: types.Message):
-    path = f'/home/bahrom/Desktop/TelegramBots/ibnsino/ibnsino_bot/ibnsino.jpg'
+    path = f'ibnsino.jpg'
     path = open(file=path, mode='rb')
     template = types.InputFile(path)
     await bot.send_photo(
