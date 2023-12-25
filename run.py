@@ -14,6 +14,11 @@ from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters.state import State, StatesGroup
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 import requests
+from environs import Env
+
+env = Env()
+env.read_env()
+
 
 '''
 Bahrom Bek 2023 Oktabr
@@ -22,7 +27,7 @@ Telegram: @bahrombek19
 
 
 
-API_Key = "6767785419:AAEgCWhKqRvwBYB9ue0N4HcyEiFOSp1Ixzw"
+API_Key = env.str("BOT_TOKEN")
 storage = MemoryStorage()
 bot = Bot(token=API_Key)
 dp = Dispatcher(bot, storage=storage)
@@ -202,9 +207,9 @@ async def create_template(message: types.Message, state: FSMContext):
 
     await message.answer("Siz shifokor ko'rigiga ro'yxatga olindingiz! \nTez orada siz bilan bog'lanamiz", reply_markup=kb)
 
-    developer = '1107759940'
-    admin_buxoro = '-1002073642555'
-    admin_navoiy = '-1001856047828'
+    developer = env.str("DEVELOPER")
+    admin_buxoro = env.str("ADMIN_BUXORO")
+    admin_navoiy = env.str("ADMIN_NAVOIY")
     api_token = API_Key  # Replace with your Telegram bot API token
 
     city = data['city']
