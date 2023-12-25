@@ -55,6 +55,14 @@ lokatsiyalist = [types.reply_keyboard.KeyboardButton('📍 Buxoro'),
 
 kb_manzil.add(*lokatsiyalist)
 
+# shifokor ko'rigiga yozilish uchun manzil bilan adashib ketmaydi
+kb_shifokor_manzil = types.reply_keyboard.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
+lokatsiyalist_korik = [types.reply_keyboard.KeyboardButton('Buxoro'),
+                 types.reply_keyboard.KeyboardButton('Navoiy')]
+
+kb_shifokor_manzil.add(*lokatsiyalist_korik)
+
+
 # Inline keyboard
 inline_kb = types.InlineKeyboardMarkup(row_width=1)
 inline_kb_1 = types.InlineKeyboardButton('Xabar yuborish', url='https://t.me/ibnsino2015')
@@ -177,7 +185,7 @@ async def contact(message: types.Message):
     await NewTemplate.city.set()
     await message.reply(
         text='🌆 Shaxarni tanlang',
-        reply_markup=kb_manzil)
+        reply_markup=kb_shifokor_manzil)
     
 
 # Toliq ismingizni kiriting
