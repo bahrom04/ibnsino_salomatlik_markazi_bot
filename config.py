@@ -1,14 +1,3 @@
-import logging
-from aiogram import Bot, Dispatcher
-
-# Ibn Sino salomatlik markazi
-API_Key = "6479301334:AAEFdFCkdpnRN4KpMWt0nLXVQLToIKLOPBA"
-
-logging.basicConfig(level=logging.INFO)
-
-bot = Bot(token=API_Key)
-dp = Dispatcher(bot)
-
 biz_haqimizda = '''
 🏥 Biz haqimizda
 

@@ -1,34 +1,31 @@
+import requests
+from datetime import datetime
+
 from aiogram import executor
 from aiogram import types, filters
-from config import dp
 from aiogram import Bot, Dispatcher
+from aiogram.dispatcher import FSMContext
+from aiogram.dispatcher.filters.state import State, StatesGroup
+from aiogram.contrib.fsm_storage.memory import MemoryStorage
+
+from Data_base import user
+from environs import Env
+
 from config import (biz_haqimizda,
                     nega_aynan_biz, 
                     boglanish_buxoro, 
                     boglanish_navoiy , 
                     ijtimoiy_tarmoqlar,
                     muolaja_haqida)
-from Data_base import user
-from datetime import datetime
-from aiogram.dispatcher import FSMContext
-from aiogram.dispatcher.filters.state import State, StatesGroup
-from aiogram.contrib.fsm_storage.memory import MemoryStorage
-import requests
-from environs import Env
 
 env = Env()
 env.read_env()
 
 
-'''
-Bahrom Bek 2023 Oktabr
-Telegram: @bahrombek19
-'''
-
-
+storage = MemoryStorage()
 
 API_Key = env.str("BOT_TOKEN")
-storage = MemoryStorage()
+
 bot = Bot(token=API_Key)
 dp = Dispatcher(bot, storage=storage)
 
