@@ -1,5 +1,5 @@
 import requests
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from aiogram import executor
 from aiogram import types, filters
@@ -85,7 +85,7 @@ async def send_welcome(message: types.Message):
         tg_id = message.from_user.id
         username = message.from_user.full_name
         # dd/mm/YY H:M:S
-        now = datetime.now()
+        now = datetime.now() 
         created_at = now.strftime("%d/%m/%Y %H:%M:%S")
         # Getting exact time when user started
         current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
