@@ -14,7 +14,9 @@ from environs import Env
 from config import (biz_haqimizda,
                     nega_aynan_biz, 
                     boglanish_buxoro, 
-                    boglanish_navoiy , 
+                    boglanish_navoiy,
+                    boglanish_gijdivon,
+                    boglanish_vobkent, 
                     ijtimoiy_tarmoqlar,
                     muolaja_haqida)
 
@@ -47,15 +49,19 @@ kb.add(*button_list)
 
 # Filiallar uchun manzil buttonlari
 kb_manzil = types.reply_keyboard.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
-lokatsiyalist = [types.reply_keyboard.KeyboardButton('📍 Buxoro'),
-                 types.reply_keyboard.KeyboardButton('📍 Navoiy')]
+lokatsiyalist = [types.reply_keyboard.KeyboardButton("📍 Buxoro"),
+                 types.reply_keyboard.KeyboardButton("📍 Navoiy"),
+                 types.reply_keyboard.KeyboardButton("📍 Vobkent"),
+                 types.reply_keyboard.KeyboardButton("📍 G'ijduvon")]
 
 kb_manzil.add(*lokatsiyalist)
 
 # shifokor ko'rigiga yozilish uchun manzil bilan adashib ketmaydi
 kb_shifokor_manzil = types.reply_keyboard.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
 lokatsiyalist_korik = [types.reply_keyboard.KeyboardButton('Buxoro'),
-                 types.reply_keyboard.KeyboardButton('Navoiy')]
+                 types.reply_keyboard.KeyboardButton('Navoiy'),
+                 types.reply_keyboard.KeyboardButton("Vobkent"),
+                 types.reply_keyboard.KeyboardButton("G'ijduvon")]
 
 kb_shifokor_manzil.add(*lokatsiyalist_korik)
 
@@ -66,9 +72,6 @@ inline_kb_1 = types.InlineKeyboardButton('Xabar yuborish', url='https://t.me/ibn
 inline_kb_2 = types.InlineKeyboardButton('Telegram guruhimiz', url='https://t.me/ibnsinobuxoro')
 inline_kb_3 = types.InlineKeyboardButton('Instagram', url='https://instagram.com/ibnsino_salomatlik_markazi?igshid=MzRlODBiNWFlZA==')
 inline_kb.add(inline_kb_1, inline_kb_2, inline_kb_3)
-
-
-
 
 
 ID = '1107759940'
@@ -95,17 +98,10 @@ async def send_welcome(message: types.Message):
         except:
             print('Member already exists in the database')
 
-
-
-
     # write time to file
     with open('log.txt', 'a') as f:
         f.write(message)
         f.close()
-
-
-
-    
 
 
 @dp.message_handler(filters.Text(contains='🏥 Biz haqimizda'))
@@ -133,8 +129,6 @@ async def contact(message: types.Message):
         text=ijtimoiy_tarmoqlar,
         reply_markup=inline_kb
     )
-
-
 
 @dp.message_handler(filters.Text(contains="❔ Nega aynan biz"))
 async def contact(message: types.Message):
@@ -215,8 +209,10 @@ async def create_template(message: types.Message, state: FSMContext):
     developer = env.str("DEVELOPER")
     admin_buxoro = env.str("ADMIN_BUXORO")
     admin_navoiy = env.str("ADMIN_NAVOIY")
-    api_token = API_Key  # Replace with your Telegram bot API token
-
+    admin_vobkent = env.str("ADMIN_VOBKENT")
+    admin_gijduvon = env.str("ADMIN_GIJDUVON")
+    api_token = API_Key  # Telegram bot API token
+    
     city = data['city']
     full_name = data['full_name']
     phone_number = data['phone_number']
@@ -228,10 +224,14 @@ async def create_template(message: types.Message, state: FSMContext):
     
     api_url = f"https://api.telegram.org/bot{api_token}/sendMessage"
 
-    if city == '📍 Buxoro':
+    if city == 'Buxoro':
         admin = admin_buxoro
-    else:
+    if city == 'Navoiy':
         admin = admin_navoiy
+    if city == 'Vobkent':
+        admin = admin_vobkent
+    else:
+        admin = admin_gijduvon
 
     # Send message to developer
     payload = {
@@ -289,6 +289,44 @@ async def contact(message: types.Message):
     await bot.send_location(chat_id=message.from_user.id, 
         latitude=latitude, 
         longitude=longitude)
+    
+# Vobkent locatsiyasi
+@dp.message_handler(filters.Text(contains="📍 Vobkent"))
+async def vonkent(message: types.Message):
+    path = 'vobkent.jpg'
+    path = open(file=path, mode='rb')
+    await bot.send_photo(
+        chat_id=message.from_user.id,
+        photo=path,
+        reply_markup=kb,
+        caption=boglanish_vobkent
+    )
+
+    # longitude = 65.35073398011772
+    # latitude = 40.13138896114748
+
+    # await bot.send_location(chat_id=message.from_user.id, 
+    #     latitude=latitude, 
+    #     longitude=longitude)
+    
+# G'ijduvon locatsiyasi
+@dp.message_handler(filters.Text(contains="📍 G'ijduvon"))
+async def gijduvon(message: types.Message):
+    path = 'gijduvon.jpg'
+    path = open(file=path, mode='rb')
+    await bot.send_photo(
+        chat_id=message.from_user.id,
+        photo=path,
+        reply_markup=kb,
+        caption=boglanish_gijdivon
+    )
+
+    # longitude = 65.35073398011772
+    # latitude = 40.13138896114748
+
+    # await bot.send_location(chat_id=message.from_user.id, 
+    #     latitude=latitude, 
+    #     longitude=longitude)
     
 
 

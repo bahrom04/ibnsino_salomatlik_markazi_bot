@@ -39,6 +39,24 @@ boglanish_navoiy = '''
 
 '''
 
+boglanish_vobkent = '''
+☎️ Aloqa markazi: +998957770303
+
+📍 Bizning manzil:   Vobkent t. Tadbirkor ko'chasi
+Mo'ljal: Vobkent tez yordam bo'limi ro'parasida
+
+https://maps.app.goo.gl/DSFtz3mVTb8mwgNV6?g_st=com.google.maps.preview.copy
+'''
+
+boglanish_gijdivon = '''
+☎️ Aloqa markazi: +998957770303
+
+📍 Bizning manzil:  G'ijduvon sh. Ulug'bek ko'chasi 100-uy
+Mo'ljal: “Gulasal” restorani ro'parasida
+
+https://maps.app.goo.gl/z3tvWoQzmhHvNCGb8
+'''
+
 muolaja_haqida = '''
 💊 Ibn Sino salomolatlik markazi gijja kasalliklarini aniqlash va
 davolashga ixtisoslashgan bo'lib xozirgi kungacha 
