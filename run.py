@@ -302,12 +302,12 @@ async def vonkent(message: types.Message):
         caption=boglanish_vobkent
     )
 
-    # longitude = 65.35073398011772
-    # latitude = 40.13138896114748
+    longitude = 64.5226739
+    latitude = 40.024539
 
-    # await bot.send_location(chat_id=message.from_user.id, 
-    #     latitude=latitude, 
-    #     longitude=longitude)
+    await bot.send_location(chat_id=message.from_user.id, 
+        latitude=latitude, 
+        longitude=longitude)
     
 # G'ijduvon locatsiyasi
 @dp.message_handler(filters.Text(contains="📍 G'ijduvon"))
@@ -321,12 +321,12 @@ async def gijduvon(message: types.Message):
         caption=boglanish_gijdivon
     )
 
-    # longitude = 65.35073398011772
-    # latitude = 40.13138896114748
+    longitude = 64.683064
+    latitude = 40.109509
 
-    # await bot.send_location(chat_id=message.from_user.id, 
-    #     latitude=latitude, 
-    #     longitude=longitude)
+    await bot.send_location(chat_id=message.from_user.id, 
+        latitude=latitude, 
+        longitude=longitude)
     
 
 
